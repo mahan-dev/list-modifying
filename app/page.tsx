@@ -20,7 +20,7 @@ const Page = () => {
 
   const addTodo = async (title: string) => {
     const response = await todos.addTodo(title);
-    let formattedTodo = { title: response.title, id: todoList.length + 1 };
+    const formattedTodo = { title: response.title, id: todoList.length + 1 };
     setTodoList([formattedTodo, ...todoList]);
   };
 
