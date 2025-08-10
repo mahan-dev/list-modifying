@@ -32,7 +32,7 @@ const AddTodo = ({ title }: AddProps) => {
 
         <button type="submit">
           
-          <Image  src={addIcon} width={20} height={20} alt="search" />
+          <Image src={addIcon} width={20} height={20} alt="search" />
         </button>
       </div>
     </form>

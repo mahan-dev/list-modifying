@@ -9,9 +9,9 @@
 
 .form__elements {
     box-shadow: 0px 2px 12px rgba(0,0,0,0.1);
-    @apply w-fit flex items-center border-2  rounded-md p-2 gap-3
+    @apply w-fit flex items-center border-2  rounded-md p-2 gap-3 max-md:w-full;
 }
 
 .form__elements input{
-    @apply outline-none border-none;
+    @apply  outline-none border-none max-md:w-full ;
 }
