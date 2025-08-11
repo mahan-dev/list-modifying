@@ -29,9 +29,10 @@ const Page = () => {
     setTodoList(filteredTodo);
   };
 
+
   return (
     <section className="m-3 lg:max-w-[998px] lg:mx-auto">
-      <AddTodo title={addTodo} />
+      {todoList.length > 0 && <AddTodo title={addTodo} />}
       <Home lists={todoList} onRemove={removeHandler} />
     </section>
   );

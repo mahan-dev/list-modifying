@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import toast from "react-hot-toast";
 import Todo from "models/todoInterface";
-import styles from "./home.module.css";
+
+import UserList from "@/templates/UserList";
 
 interface TodoProps {
   lists: Todo[];
@@ -17,27 +18,14 @@ const Home = ({ lists, onRemove }: TodoProps) => {
   };
   return (
     <>
-      {lists.map((item) => {
-        const { id, title } = item;
-
-        return (
-          <ul className={styles.list} key={id}>
-            <div
-              className={styles["list__item-info"]}
-              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            >
-              <span className="text-red" >id: {id} -</span>
-              <p>{title}</p>
-            </div>
-            <button
-              className={styles["list__button-remove"]}
-              onClick={() => removeHandler(id)}
-            >
-              remove
-            </button>
-          </ul>
-        );
-      })}
+      {!!lists.length ? (
+        <UserList
+          lists={lists}
+          removeHandler={removeHandler}
+        />
+      ) : (
+        <h2 className=" mt-6 text-center ">nothing found 😞</h2>
+      )}
     </>
   );
 };

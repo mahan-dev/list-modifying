@@ -12,7 +12,6 @@ interface AddProps {
 
 const AddTodo = ({ title }: AddProps) => {
   const [value, setValue] = useState("");
-
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     if (!value) return toast.error("Please enter a todo item 😞");
